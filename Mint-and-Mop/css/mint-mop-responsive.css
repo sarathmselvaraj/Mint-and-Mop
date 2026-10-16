@@ -1,0 +1,297 @@
+/* Mint & Mop brand and responsive refinements. Loaded after original site.css.
+   Scoped visual adjustments preserve original services, forms and interactions. */
+:root { --mm-teal:#079c92; --mm-blue:#0787c8; }
+.navbar-brand,.footer-brand {gap:.58rem; min-width:0; flex-shrink:0; font-size:clamp(1.1rem,1.58vw,1.52rem); letter-spacing:-.035em; line-height:1.1; white-space:nowrap;}
+.navbar-brand > span:last-child,.footer-brand > span:last-child {min-width:0; white-space:nowrap;}
+.brand-icon.mint-brand-icon {width:44px;height:44px;min-width:44px;border-radius:13px;background:transparent!important;box-shadow:none!important;overflow:visible;flex:0 0 44px;}
+.mint-brand-icon img {display:block;width:100%;height:100%;object-fit:contain;max-width:100%;filter:drop-shadow(0 4px 8px rgba(4,83,112,.15));}
+.navbar-brand .brand-badge,.footer-brand .brand-badge {background:none!important;color:var(--primary)!important;}
+.attic-footer .attic-footer-brand .navbar-brand > span:last-child {color:#fff!important;}
+.attic-footer .attic-footer-brand .brand-badge {color:#86eee1!important;}
+body {overflow-x:clip;}
+main,.container,.container-fluid,.row,.row>[class*="col-"],.card,.service-card,.pricing-card,.blog-card {min-width:0;}
+main img,main video {max-width:100%;}
+.btn-cta-primary,.btn-secondary-custom,.btn-view-details,.attic-mail-cta {max-width:100%;text-align:center;justify-content:center;overflow-wrap:anywhere;}
+input,select,textarea {max-width:100%;min-width:0;}
+.hero-image-wrapper,.hero-main-img {max-width:100%;}
+.hero-main-img {object-fit:cover;}
+.service-card,.pricing-card {height:100%;}
+.service-card {display:flex;flex-direction:column;}
+.service-card-body {display:flex;flex-direction:column;flex:1;}
+.service-card-body .btn-view-details {margin-top:auto;align-self:stretch;}
+.site-footer.attic-footer .attic-footer-grid > * {min-width:0;}
+.site-footer.attic-footer .footer-links a {overflow-wrap:break-word;}
+/* The existing theme/nav buttons remain accessible in every view. */
+.site-navbar .navbar-toggler {min-width:44px;min-height:44px;display:none;align-items:center;justify-content:center;}
+@media (min-width:992px) { .site-navbar .navbar-toggler {display:none!important;} }
+@media (min-width:992px) and (max-width:1199.98px) {
+  .site-navbar .container {max-width:calc(100% - 32px);}
+  .site-navbar .navbar-brand {font-size:1.23rem;gap:7px;}
+  .site-navbar .brand-icon.mint-brand-icon {width:38px;height:38px;min-width:38px;flex-basis:38px;}
+  .site-navbar .navbar-nav {gap:0;}
+  .site-navbar .navbar-nav .nav-link {font-size:.84rem;padding:.45rem .45rem!important;white-space:nowrap;}
+  .site-navbar .nav-controls {gap:.38rem;}
+  .site-navbar .nav-controls .btn-control-toggle {width:36px;height:36px;}
+  .site-navbar .nav-controls .btn-cta-primary {font-size:.78rem;padding:.56rem .7rem;white-space:nowrap;}
+}
+@media (max-width:991.98px) {
+  .site-navbar .navbar-toggler {display:inline-flex; flex-shrink:0; margin-inline-start:auto;}
+  .site-navbar .navbar-collapse {max-height:calc(100dvh - 90px);overflow-y:auto;overscroll-behavior:contain;}
+  .site-navbar .navbar-nav .nav-link {display:block;width:100%;}
+  .site-navbar .nav-controls {justify-content:flex-start!important;gap:12px;}
+  .site-navbar .nav-controls .btn-cta-primary {flex:0 1 auto;}
+  .hero-section-1 .row>[class*="col-"] {min-width:0;}
+  .hero-image-wrapper {margin-inline:auto;width:min(100%,660px);}
+  .floating-stat-card {max-width:100%;}
+  .attic-footer .attic-footer-grid {grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:32px 28px!important;}
+}
+@media (max-width:767.98px) {
+  .hero-section-1 {overflow:hidden;}
+  .hero-section-1 .row {row-gap:30px;}
+  .hero-title-1 {font-size:clamp(2rem,7vw,3.1rem)!important;line-height:1.12;}
+  .hero-section-1 .d-flex.flex-wrap.gap-3 > a {min-height:44px;}
+  .hero-section-1 .d-flex.align-items-center.gap-4 {gap:12px!important;flex-wrap:wrap;}
+  .hero-image-wrapper .floating-stat-card {max-width:100%;}
+  .service-img-holder img {width:100%;object-fit:cover;}
+  .section-py {padding-block:clamp(38px,7vw,58px)!important;}
+  .section-title {font-size:clamp(1.68rem,5.7vw,2.25rem)!important;line-height:1.15;}
+  .section-desc {max-width:100%;}
+  .cta-banner-section .attic-cta-actions {width:100%;flex-wrap:wrap!important;}
+  .cta-banner-section .attic-cta-actions>a {max-width:100%;min-width:0;}
+  .attic-footer .attic-footer-newsletter {margin-top:30px;padding:20px!important;}
+  .attic-footer .attic-footer-grid {gap:25px 20px!important;}
+  .modal-dialog {max-width:calc(100% - 16px);margin-inline:auto;}
+  .modal-content {max-height:calc(100dvh - 32px);overflow-y:auto;}
+  table {max-width:100%;}
+  .table-responsive {overflow-x:auto;-webkit-overflow-scrolling:touch;}
+}
+@media (max-width:575.98px) {
+  .site-navbar {padding:.65rem 0;}
+  .site-navbar.scrolled {padding:.6rem 0;}
+  .site-navbar .container {width:calc(100% - 22px);max-width:100%;padding-inline:3px;}
+  .site-navbar .navbar-brand {font-size:clamp(1.04rem,5vw,1.26rem);gap:7px;}
+  .site-navbar .brand-icon.mint-brand-icon {width:38px;height:38px;min-width:38px;flex-basis:38px;}
+  .site-navbar .navbar-toggler {padding:2px 4px;min-width:40px;}
+  .site-navbar .navbar-toggler i {font-size:1.72rem!important;}
+  .hero-section-1 .row {margin-inline:0;}
+  .hero-section-1 .row>* {padding-inline:0;}
+  .hero-section-1 .d-flex.flex-wrap.gap-3 > a {width:100%;}
+  .hero-section-1 .hero-image-wrapper img {height:auto;max-height:460px;object-fit:cover;}
+  .section-title {font-size:clamp(1.55rem,7vw,1.96rem)!important;}
+  .attic-footer .attic-footer-grid {grid-template-columns:minmax(0,1fr)!important;gap:25px!important;}
+  .attic-footer .attic-footer-newsletter-controls {grid-template-columns:1fr!important;}
+  .attic-footer .attic-footer-newsletter-controls button {width:100%;}
+  .attic-footer .attic-footer-bottom {flex-direction:column;align-items:flex-start;}
+  .cta-banner-section .attic-cta-actions>a {width:100%!important;white-space:normal;}
+}
+@media (max-width:359.98px) {
+ .site-navbar .navbar-brand {font-size:1.05rem;}
+ .site-navbar .brand-icon.mint-brand-icon {width:34px;height:34px;min-width:34px;flex-basis:34px;}
+ .hero-title-1 {font-size:1.92rem!important;}
+ .attic-footer .attic-footer-newsletter {padding:16px!important;}
+}
+@media (prefers-reduced-motion:reduce){
+ .brand-icon.mint-brand-icon,.navbar-brand,.btn-cta-primary,.btn-secondary-custom {transition:none!important;}
+}
+/* Overflow corrections from actual 320px / 390px render inspection. */
+@media (max-width:767.98px){
+  /* Old Bootstrap rows were extending 12px beyond their section wrappers. */
+  main .row {margin-inline:0!important;max-width:100%;}
+  main .row>[class*="col-"] {min-width:0;max-width:100%;}
+  main .row a.btn-secondary-custom,main .row a.btn-white-custom {display:inline-flex;max-width:100%!important;white-space:normal!important;margin-inline:auto!important;}
+  main .row .d-flex:not(.gap-0) {max-width:100%;flex-wrap:wrap;}
+  .ba-comparison-container {max-width:100%;}
+  .ba-img-before,.ba-img-after {object-fit:cover;}
+  .contact-info-card a,.contact-info-card p,.contact-info-card h6 {overflow-wrap:anywhere;word-break:break-word;min-width:0;}
+  .admin-content,.admin-main {min-width:0;max-width:100vw;}
+  .admin-main .row {margin-inline:0!important;}
+  .admin-main .table-responsive {width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .admin-main .admin-table {min-width:560px;}
+  .admin-content {padding-inline:12px!important;}
+}
+@media (max-width:575.98px){
+  main a.btn-white-custom {max-width:100%;white-space:normal;text-align:center;}
+  main .btn-white-custom.fs-5.px-5 {padding-inline:1rem!important;font-size:1rem!important;width:min(100%,330px);}
+  .cta-banner-section .attic-cta-actions {max-width:100%;}
+  .contact-info-card {max-width:100%;min-width:0;}
+  header:not(:has(.site-navbar)) .container.d-flex.justify-content-between {gap:12px;flex-wrap:wrap;}
+  header:not(:has(.site-navbar)) .container.d-flex.justify-content-between > div.d-flex {min-width:0;max-width:100%;gap:6px!important;flex-wrap:wrap;justify-content:flex-end;}
+  header:not(:has(.site-navbar)) .container.d-flex.justify-content-between .btn-control-toggle {width:36px;height:36px;min-width:36px;}
+}
+@media (max-width:359.98px){
+  header:not(:has(.site-navbar)) .container.d-flex.justify-content-between > div.d-flex {width:100%;justify-content:center!important;}
+  header:not(:has(.site-navbar)) .container.d-flex.justify-content-between .navbar-brand {margin-inline:auto;}
+}
+/* Final small-screen comparison/analytics containment. */
+.admin-main {max-width:100%;overflow-x:clip;}
+.admin-main .row {margin-inline:0!important;}
+.admin-main .row>[class*="col-"] {min-width:0;}
+.admin-main .admin-content {min-width:0;max-width:100%;}
+.admin-main canvas {max-width:100%!important;width:100%!important;}
+.admin-main .table-responsive {max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+@media (max-width:767.98px){
+  .ba-before-wrapper .ba-img-before {width:calc(100vw - 44px)!important;max-width:calc(100vw - 44px)!important;}
+  .ba-comparison-container{width:100%;overflow:hidden;}
+}
+@media(max-width:575.98px){
+ .counter-box {padding:12px 8px!important;min-width:0;}
+ .counter-num {font-size:clamp(1.55rem,6.2vw,2.1rem)!important;letter-spacing:-.035em;overflow-wrap:anywhere;}
+ .counter-label {font-size:.82rem!important;overflow-wrap:anywhere;line-height:1.3;}
+}
+@media(max-width:359.98px){
+ .counter-box {padding:10px 5px!important;}
+ .counter-num {font-size:1.55rem!important;}
+}
+
+
+/* ===== MINT & MOP — NAV / FOOTER / ACCESSIBILITY CONSISTENCY =====
+   Shared across all pages; override old theme-specific background rules. */
+:root,
+[data-theme="dark"],
+[data-theme="light"] {
+  --mm-chrome-bg: #0b2538;
+  --mm-chrome-edge: rgba(119, 222, 216, .25);
+  --mm-chrome-text: #eef7fc;
+  --mm-chrome-accent: #87eee1;
+  --mm-header-clearance: 112px;
+}
+/* One identical deep navy colour on navbar and footer, in both modes. */
+header:has(> .site-navbar) {z-index:1080!important; isolation:isolate;}
+.site-navbar,
+.site-navbar.scrolled,
+[data-theme="light"] .site-navbar,
+[data-theme="dark"] .site-navbar,
+[data-theme="light"] .site-navbar.scrolled,
+[data-theme="dark"] .site-navbar.scrolled {
+  background:var(--mm-chrome-bg)!important;
+  background-color:var(--mm-chrome-bg)!important;
+  border-bottom:1px solid var(--mm-chrome-edge)!important;
+  color:var(--mm-chrome-text)!important;
+}
+.site-footer.attic-footer,
+[data-theme="light"] .site-footer.attic-footer,
+[data-theme="dark"] .site-footer.attic-footer {
+  background:var(--mm-chrome-bg)!important;
+  background-color:var(--mm-chrome-bg)!important;
+  color:var(--mm-chrome-text)!important;
+  border-top:2px solid var(--mm-chrome-edge)!important;
+}
+/* Mint is always white, & Mop always mint green; the SVG artwork never changes. */
+.site-navbar .navbar-brand > span:last-child,
+.attic-footer .attic-footer-brand .navbar-brand > span:last-child,
+header:not(:has(.site-navbar)) .navbar-brand > span:last-child,
+.admin-sidebar .sidebar-header .navbar-brand > span:last-child {
+  color:#f6fbff!important;
+}
+.site-navbar .navbar-brand .brand-badge,
+.attic-footer .attic-footer-brand .navbar-brand .brand-badge,
+header:not(:has(.site-navbar)) .navbar-brand .brand-badge,
+.admin-sidebar .sidebar-header .navbar-brand .brand-badge {
+  color:var(--mm-chrome-accent)!important;
+}
+.site-navbar .navbar-nav .nav-link {
+  color:var(--mm-chrome-text)!important;
+}
+.site-navbar .navbar-nav .nav-link:hover,
+.site-navbar .navbar-nav .nav-link:focus-visible,
+.site-navbar .navbar-nav .nav-link.active,
+.site-navbar .navbar-nav .show > .nav-link {
+  color:var(--mm-chrome-accent)!important;
+  background:rgba(119,231,221,.15)!important;
+}
+.site-navbar .navbar-toggler,
+.site-navbar .navbar-toggler i,
+.site-navbar .navbar-toggler .text-primary {
+  color:var(--mm-chrome-text)!important;
+}
+.site-navbar .nav-controls .btn-control-toggle,
+header:not(:has(.site-navbar)) .btn-control-toggle {
+  color:var(--mm-chrome-text)!important;
+  background:rgba(255,255,255,.09)!important;
+  border:1px solid rgba(183,233,237,.33)!important;
+}
+.site-navbar .nav-controls .btn-control-toggle:hover,
+.site-navbar .nav-controls .btn-control-toggle:focus-visible,
+header:not(:has(.site-navbar)) .btn-control-toggle:hover {
+  color:var(--mm-chrome-accent)!important;
+  background:rgba(110,221,214,.17)!important;
+  border-color:var(--mm-chrome-accent)!important;
+}
+.site-navbar .nav-controls .btn-cta-primary {
+  background:linear-gradient(125deg,#0369a1,#0f766e)!important;
+  color:#fff!important;
+}
+.site-navbar .dropdown-menu {
+  background:var(--bg-card)!important;
+  color:var(--text-main)!important;
+  z-index:1100!important;
+}
+.site-navbar .dropdown-menu .dropdown-item {color:var(--text-main)!important;}
+.site-navbar .dropdown-menu .dropdown-item:hover,
+.site-navbar .dropdown-menu .dropdown-item:focus-visible {background:var(--primary-light)!important;color:var(--primary)!important;}
+@media(max-width:991.98px){
+  .site-navbar .navbar-collapse {
+    background:var(--mm-chrome-bg)!important;
+    border-top:1px solid var(--mm-chrome-edge)!important;
+  }
+  .site-navbar .navbar-nav .nav-link{color:var(--mm-chrome-text)!important;}
+}
+/* Auth headers carry the same recognisable brand identity. */
+header:not(:has(.site-navbar)):not(.admin-topbar) {
+  background:var(--mm-chrome-bg)!important;
+  border-color:var(--mm-chrome-edge)!important;
+  color:var(--mm-chrome-text)!important;
+  z-index:1080!important;
+}
+header:not(:has(.site-navbar)) a.btn-outline-secondary {
+  color:var(--mm-chrome-text)!important;
+  border-color:rgba(183,233,237,.45)!important;
+}
+header:not(:has(.site-navbar)) a.btn-outline-secondary:hover {
+  color:#062437!important;
+  background:#c9f4ec!important;
+}
+/* Admin sidebar branding: same logo and wordmark without changing admin content. */
+.admin-sidebar .sidebar-header {background:var(--mm-chrome-bg)!important;border-color:var(--mm-chrome-edge)!important;}
+.admin-sidebar .sidebar-header .navbar-brand {font-size:1.12rem!important;gap:5px!important;}
+.admin-sidebar .sidebar-header .navbar-brand .brand-icon {width:34px;height:34px;min-width:34px;flex-basis:34px;}
+.admin-sidebar .sidebar-header small {color:#c2d5df!important;font-size:.58rem!important;}
+/* Stop Bootstrap's .sticky-top top:0!important forcing article sidebars
+   beneath the site header (same issue also appears in legal and service pages). */
+main .mm-page-sidebar {
+  position:sticky!important;
+  top:var(--mm-header-clearance)!important;
+  z-index:1!important;
+  align-self:start!important;
+  scroll-margin-top:var(--mm-header-clearance);
+}
+@media(max-width:991.98px), (max-height:720px) {
+  main .mm-page-sidebar {position:static!important;top:auto!important;}
+}
+/* Keep global article text contrast comfortable in dark and light modes. */
+[data-theme="light"] main .article-body-content p,
+[data-theme="light"] main .article-body-content li {color:#475569!important;}
+[data-theme="dark"] main .article-body-content p,
+[data-theme="dark"] main .article-body-content li {color:#c5d2e4!important;}
+[data-theme="dark"] main .text-muted {color:#b2c1d6!important;}
+[data-theme="light"] main .text-muted {color:#516075!important;}
+/* High contrast on filled brand CTA buttons in BOTH modes. */
+.btn-cta-primary,
+[data-theme="dark"] .btn-cta-primary,
+[data-theme="light"] .btn-cta-primary {
+  background:linear-gradient(125deg,#0369a1,#0f766e)!important;
+  color:#fff!important;
+}
+:where(a,button,input,select,textarea):focus-visible {outline:3px solid #80ede5;outline-offset:3px;}
+
+/* Theme-specific text tokens tuned for readable supporting copy & labels. */
+:root, [data-theme="light"] {
+  --primary:#0369a1;
+  --secondary:#0f766e;
+  --text-light:#52637a;
+}
+[data-theme="dark"] {
+  --text-light:#aebdd1;
+  --text-muted:#b5c4d7;
+}
+[data-theme="light"] main .section-tag.warning {color:#975400!important;}

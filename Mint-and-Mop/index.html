@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+
+<html data-theme="light" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mint &amp; Mop | Attic &amp; Crawl Space Cleaning, Insulation &amp; Decontamination</title>
+<meta content="Certified attic and crawl space cleaning, insulation removal, rodent proofing, and mold decontamination services. Get your 100% free home inspection today." name="description"/>
+<!-- Favicon -->
+<link href="images/mint-mop-logo.svg" rel="icon" type="image/svg+xml"/>
+<!-- Bootstrap 5.3.3 & Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<!-- Custom Design System Stylesheet -->
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/mint-mop-responsive.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- 1. Consistent Public Navigation Bar -->
+<header class="sticky-top">
+<nav class="navbar navbar-expand-lg site-navbar" id="mainNavbar">
+<div class="container">
+<!-- Logo -->
+<a class="navbar-brand" href="index.html">
+<span class="brand-icon mint-brand-icon"><img src="images/mint-mop-logo.svg" alt="" width="44" height="44" loading="eager" decoding="async"></span>
+<span>Mint <span class="brand-badge">&amp; Mop</span></span>
+</a>
+<!-- Mobile Toggler -->
+<button aria-controls="navMenuContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler border-0 shadow-none" data-bs-target="#navMenuContent" data-bs-toggle="collapse" type="button">
+<i class="bi bi-list fs-1 text-primary"></i>
+</button>
+<!-- Navbar Content (Exact 9 items in exact order) -->
+<div class="collapse navbar-collapse" id="navMenuContent">
+<ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+<!-- 1. Home Dropdown (Only Home 1 and Home 2) -->
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" id="homeDropdown" role="button">
+                Home
+              </a>
+<ul aria-labelledby="homeDropdown" class="dropdown-menu">
+<li><a class="dropdown-item active" href="index.html"><i class="bi bi-house-door"></i> Home Page 1 – General Services</a></li>
+<li><a class="dropdown-item" href="index-2.html"><i class="bi bi-shield-shaded"></i> Home Page 2 – Attic &amp; Crawl Space</a></li>
+</ul>
+</li>
+<!-- 2. About Us -->
+<li class="nav-item">
+<a class="nav-link" href="about.html">About Us</a>
+</li>
+<!-- 3. Services -->
+<li class="nav-item">
+<a class="nav-link" href="services.html">Services</a>
+</li>
+<!-- 4. Pricing -->
+<li class="nav-item">
+<a class="nav-link" href="pricing.html">Pricing</a>
+</li>
+<!-- 5. Blog -->
+<li class="nav-item">
+<a class="nav-link" href="blog.html">Blog</a>
+</li>
+<!-- 6. Contact Us -->
+<li class="nav-item">
+<a class="nav-link" href="contact.html">Contact Us</a>
+</li>
+</ul>
+<!-- Navbar Controls: RTL Toggle, Theme Toggle, Primary CTA -->
+<div class="nav-controls">
+<!-- 7. RTL Toggle -->
+<button class="btn-control-toggle rtl-toggle-btn" id="rtlToggleBtn" title="Switch text direction" type="button">
+<span class="toggle-label">RTL</span>
+</button>
+<!-- 8. Dark/Light Mode Toggle -->
+<button class="btn-control-toggle theme-toggle-btn" id="themeToggleBtn" title="Toggle theme mode" type="button">
+<i class="bi bi-moon-stars-fill"></i>
+</button>
+<!-- 9. Primary CTA Button -->
+<a class="btn-cta-primary" data-bs-target="#freeInspectionModal" data-bs-toggle="modal" href="#inspectionModal">
+<i class="bi bi-clipboard2-check-fill"></i> Get a Free Inspection
+            </a>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main>
+<!-- SECTION 1: Hero Section -->
+<section class="hero-section-1">
+<div class="container">
+<div class="row align-items-center g-5">
+<div class="col-lg-6">
+<div class="hero-badge-pill">
+<span class="badge bg-primary text-white rounded-pill px-2 py-1">Top Rated 2026</span>
+<span class="text-muted">#1 Attic &amp; Crawl Space Specialists</span>
+</div>
+<h1 class="hero-title-1">
+              Breathe Cleaner Air With Complete <span class="text-primary">Attic &amp; Crawl Space</span> Remediation
+            </h1>
+<p class="lead text-muted mb-4">
+              Eliminate harmful rodent contamination, trapped allergens, damp crawl spaces, and damaged insulation. We restore your home’s sub-structures for maximum energy savings and pure indoor air quality.
+            </p>
+<div class="d-flex flex-wrap gap-3 mb-4">
+<a class="btn-cta-primary px-4 py-3 fs-6" data-bs-target="#freeInspectionModal" data-bs-toggle="modal" href="#inspectionModal">
+<i class="bi bi-calendar-check me-2"></i> Book Free 25-Point Inspection
+              </a>
+<a class="btn-secondary-custom px-4 py-3 fs-6" href="services.html">
+<i class="bi bi-grid me-2"></i> Explore All Services
+              </a>
+</div>
+<div class="d-flex align-items-center gap-4 pt-3 border-top border-color">
+<div class="d-flex align-items-center">
+<i class="bi bi-star-fill text-warning fs-5"></i>
+<i class="bi bi-star-fill text-warning fs-5"></i>
+<i class="bi bi-star-fill text-warning fs-5"></i>
+<i class="bi bi-star-fill text-warning fs-5"></i>
+<i class="bi bi-star-fill text-warning fs-5"></i>
+</div>
+<span class="fw-bold">4.9/5 Rating</span>
+<span class="text-muted">| Over 4,200+ Homes Restored</span>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="hero-image-wrapper">
+<img alt="Attic cleaning technician with protective gear" class="hero-main-img shadow-xl" src="images/hero-1-attic-clean.jpg"/>
+<!-- Floating stat cards -->
+<div class="floating-stat-card bottom-left">
+<div class="stat-icon-circle"><i class="bi bi-shield-fill-check"></i></div>
+<div>
+<h6 class="fw-bold mb-0">100% Decontaminated</h6>
+<small class="text-muted">Hospital-Grade EPA Sanitization</small>
+</div>
+</div>
+<div class="floating-stat-card top-right d-none d-sm-flex">
+<div class="stat-icon-circle bg-success text-white"><i class="bi bi-lightning-charge-fill"></i></div>
+<div>
+<h6 class="fw-bold mb-0">Up to 35% Savings</h6>
+<small class="text-muted">On Annual HVAC Energy Costs</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Services Overview -->
+<section class="section-py bg-surface" id="services">
+<div class="container">
+<div class="text-center mb-5">
+<span class="section-tag">What We Do</span>
+<h2 class="section-title">Comprehensive Cleaning &amp; Restoration Services</h2>
+<p class="section-desc">From hazardous rodent decontamination to high-performance insulation replacement and crawl space vapor barriers, we cover every square inch.</p>
+</div>
+<div class="row g-4">
+<!-- Service Card 1 -->
+<div class="col-md-6 col-lg-4">
+<div class="service-card">
+<div class="service-img-holder">
+<img alt="Attic HEPA Vacuum Cleaning" src="images/card-1-attic-hepa.jpg"/>
+<span class="service-badge">Most Popular</span>
+</div>
+<div class="service-card-body">
+<div class="service-icon-box"><i class="bi bi-house-door-fill"></i></div>
+<h3 class="service-card-title">Attic Cleaning &amp; Sanitization</h3>
+<p class="text-muted small">HEPA negative air vacuuming to extract rodent droppings, nesting debris, toxic dust, and airborne biological hazards.</p>
+<ul class="service-features-list">
+<li><i class="bi bi-check-circle-fill"></i> Full HEPA vacuum extraction</li>
+<li><i class="bi bi-check-circle-fill"></i> Hospital-grade antimicrobial misting</li>
+<li><i class="bi bi-check-circle-fill"></i> Odor and pheromone neutralizer</li>
+</ul>
+<a class="btn-view-details" href="service-details.html?service=attic-cleaning">View Details <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="col-md-6 col-lg-4">
+<div class="service-card">
+<div class="service-img-holder">
+<img alt="Insulation Vacuum Removal" src="images/card-2-insulation-vac.jpg"/>
+<span class="service-badge">Energy Saver</span>
+</div>
+<div class="service-card-body">
+<div class="service-icon-box"><i class="bi bi-layers-fill"></i></div>
+<h3 class="service-card-title">Insulation Removal &amp; Install Prep</h3>
+<p class="text-muted small">Dust-free exterior vacuum extraction of damaged fiberglass or cellulose insulation, followed by precision air-gap sealing.</p>
+<ul class="service-features-list">
+<li><i class="bi bi-check-circle-fill"></i> Zero dust in living quarters</li>
+<li><i class="bi bi-check-circle-fill"></i> Exterior containment disposal</li>
+<li><i class="bi bi-check-circle-fill"></i> Air penetration foam sealing</li>
+</ul>
+<a class="btn-view-details" href="service-details.html?service=insulation-removal">View Details <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="col-md-6 col-lg-4">
+<div class="service-card">
+<div class="service-img-holder">
+<img alt="Crawl Space Encapsulation" src="images/card-3-crawl-barrier.jpg"/>
+<span class="service-badge">Moisture Control</span>
+</div>
+<div class="service-card-body">
+<div class="service-icon-box"><i class="bi bi-shield-shaded"></i></div>
+<h3 class="service-card-title">Crawl Space Encapsulation</h3>
+<p class="text-muted small">Debris removal, soil grading, antimicrobial joist treatment, and seamless 20-mil vapor barrier membrane installation.</p>
+<ul class="service-features-list">
+<li><i class="bi bi-check-circle-fill"></i> Heavy-duty 20-mil sealed membrane</li>
+<li><i class="bi bi-check-circle-fill"></i> Eliminates ground dampness &amp; rot</li>
+<li><i class="bi bi-check-circle-fill"></i> Commercial dehumidifier ready</li>
+</ul>
+<a class="btn-view-details" href="service-details.html?service=crawl-space">View Details <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<!-- Service Card 4 -->
+<div class="col-md-6 col-lg-4">
+<div class="service-card">
+<div class="service-img-holder">
+<img alt="Sanitization &amp; Odor Control" src="images/card-4-sanitization-fog.jpg"/>
+<span class="service-badge">Bio-Safe</span>
+</div>
+<div class="service-card-body">
+<div class="service-icon-box"><i class="bi bi-virus2"></i></div>
+<h3 class="service-card-title">Sanitization &amp; Odor Control</h3>
+<p class="text-muted small">Ultra-low volume (ULV) botanical fogging that neutralizes urine salts, bacteria pathogens, and stubborn musty odors.</p>
+<ul class="service-features-list">
+<li><i class="bi bi-check-circle-fill"></i> EPA-registered botanicals</li>
+<li><i class="bi bi-check-circle-fill"></i> Destroys 99.9% of bacteria &amp; virus</li>
+<li><i class="bi bi-check-circle-fill"></i> Safe for kids, pets &amp; allergies</li>
+</ul>
+<a class="btn-view-details" href="service-details.html?service=sanitization">View Details <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<!-- Service Card 5 -->
+<div class="col-md-6 col-lg-4">
+<div class="service-card">
+<div class="service-img-holder">
+<img alt="FLIR Thermal Camera Moisture Scan" src="images/card-5-flir-thermal.jpg"/>
+<span class="service-badge">Diagnostic</span>
+</div>
+<div class="service-card-body">
+<div class="service-icon-box"><i class="bi bi-camera-fill"></i></div>
+<h3 class="service-card-title">Moisture, Mold &amp; Hazard Scan</h3>
+<p class="text-muted small">Thermal infrared imaging, wood moisture percentage tests, and comprehensive digital photo diagnostic reporting.</p>
+<ul class="service-features-list">
+<li><i class="bi bi-check-circle-fill"></i> FLIR thermal camera detection</li>
+<li><i class="bi bi-check-circle-fill"></i> Wood moisture saturation probe</li>
+<li><i class="bi bi-check-circle-fill"></i> Free with any booked remediation</li>
+</ul>
+<a class="btn-view-details" href="service-details.html?service=mold-inspection">View Details <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<!-- Service Card 6 (Rodent Proofing & Sealing) -->
+<div class="col-md-6 col-lg-4">
+<div class="service-card">
+<div class="service-img-holder">
+<img alt="Rodent Proofing &amp; Air Sealing" src="images/card-6-rodent-mesh.jpg"/>
+<span class="service-badge">Long Term</span>
+</div>
+<div class="service-card-body">
+<div class="service-icon-box"><i class="bi bi-shield-lock-fill"></i></div>
+<h3 class="service-card-title">Rodent Proofing &amp; Air Sealing</h3>
+<p class="text-muted small">Heavy gauge steel wire mesh, metal flashing, and fire-resistant sealant over roof gaps, vents, and foundation cracks.</p>
+<ul class="service-features-list">
+<li><i class="bi bi-check-circle-fill"></i> 1/4" galvanized steel mesh</li>
+<li><i class="bi bi-check-circle-fill"></i> Prevents re-infestation 100%</li>
+<li><i class="bi bi-check-circle-fill"></i> Lifetime warranty seal options</li>
+</ul>
+<a class="btn-view-details" href="service-details.html?service=attic-cleaning">View Details <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: Why Choose Us -->
+<section class="section-py">
+<div class="container">
+<div class="row align-items-center g-5 mb-5">
+<div class="col-lg-6">
+<span class="section-tag secondary">Why Homeowners Trust Us</span>
+<h2 class="section-title">The Clean Air Specialists You Can Count On</h2>
+<p class="text-muted">
+              Most cleaning companies only touch surface dust. At Mint &amp; Mop, we treat attic and crawl space health as a critical component of your family’s respiratory well-being and home structural longevity.
+            </p>
+<div class="row g-4 mt-2">
+<div class="col-sm-6">
+<div class="d-flex gap-3">
+<div class="feature-icon-circle flex-shrink-0" style="width: 48px; height: 48px;"><i class="bi bi-award-fill"></i></div>
+<div>
+<h6 class="fw-bold mb-1">OSHA &amp; EPA Certified</h6>
+<small class="text-muted">Full compliance with hazardous containment standards.</small>
+</div>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="d-flex gap-3">
+<div class="feature-icon-circle flex-shrink-0" style="width: 48px; height: 48px;"><i class="bi bi-shield-check"></i></div>
+<div>
+<h6 class="fw-bold mb-1">100% Money-Back Guarantee</h6>
+<small class="text-muted">Passes all independent clearance air testing.</small>
+</div>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="d-flex gap-3">
+<div class="feature-icon-circle flex-shrink-0" style="width: 48px; height: 48px;"><i class="bi bi-truck"></i></div>
+<div>
+<h6 class="fw-bold mb-1">Zero Mess Guarantee</h6>
+<small class="text-muted">Negative air extraction keeps living quarters spotless.</small>
+</div>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="d-flex gap-3">
+<div class="feature-icon-circle flex-shrink-0" style="width: 48px; height: 48px;"><i class="bi bi-cash-stack"></i></div>
+<div>
+<h6 class="fw-bold mb-1">Transparent Flat Pricing</h6>
+<small class="text-muted">No hidden fees, no bait-and-switch upsells.</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="row g-3">
+<div class="col-6">
+<div class="counter-box bg-surface rounded-4 border p-4">
+<div class="counter-num">15+</div>
+<div class="counter-label">Years In Business</div>
+</div>
+</div>
+<div class="col-6">
+<div class="counter-box bg-surface rounded-4 border p-4">
+<div class="counter-num">4,200+</div>
+<div class="counter-label">Homes Decontaminated</div>
+</div>
+</div>
+<div class="col-6">
+<div class="counter-box bg-surface rounded-4 border p-4">
+<div class="counter-num">100%</div>
+<div class="counter-label">Licensed &amp; Insured</div>
+</div>
+</div>
+<div class="col-6">
+<div class="counter-box bg-surface rounded-4 border p-4">
+<div class="counter-num">4.9★</div>
+<div class="counter-label">Google Review Score</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: Our Cleaning Process -->
+<section class="section-py bg-surface-2">
+<div class="container">
+<div class="text-center mb-5">
+<span class="section-tag">Step-by-Step Blueprint</span>
+<h2 class="section-title">Our Rigorous 5-Step Remediation Process</h2>
+<p class="section-desc">We follow strict protocol guidelines to safeguard your home against airborne contamination at every stage.</p>
+</div>
+<div class="row g-4">
+<div class="col-md-6 col-lg">
+<div class="process-step-card">
+<div class="step-number">1</div>
+<h5>Containment Setup</h5>
+<p>Floor runners laid down, doorways sealed with zippered plastic, and negative air scrubbers activated.</p>
+</div>
+</div>
+<div class="col-md-6 col-lg">
+<div class="process-step-card">
+<div class="step-number">2</div>
+<h5>Hazard Extraction</h5>
+<p>Commercial vacuum hoses extract contaminated insulation and rodent droppings straight outside to our truck.</p>
+</div>
+</div>
+<div class="col-md-6 col-lg">
+<div class="process-step-card">
+<div class="step-number">3</div>
+<h5>HEPA Vacuuming</h5>
+<p>Every rafter, joist, and surface is meticulously detailed with certified 99.97% HEPA vacuum scrubbers.</p>
+</div>
+</div>
+<div class="col-md-6 col-lg">
+<div class="process-step-card">
+<div class="step-number">4</div>
+<h5>EPA Sanitization</h5>
+<p>ULV fogging saturates the entire cavity with hospital-grade botanical disinfectant and odor neutralizer.</p>
+</div>
+</div>
+<div class="col-md-6 col-lg">
+<div class="process-step-card">
+<div class="step-number">5</div>
+<h5>Proof &amp; Sealing</h5>
+<p>Penetration holes are sealed with metal mesh/foam, followed by a digital walkthrough photo report.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: Before & After Project Gallery (Interactive) -->
+<section class="section-py">
+<div class="container">
+<div class="text-center mb-5">
+<span class="section-tag warning">Real Transformations</span>
+<h2 class="section-title">See The Difference: Before &amp; After</h2>
+<p class="section-desc">Drag the interactive slider below to inspect actual transformations performed by our certified technicians.</p>
+</div>
+<div class="ba-comparison-container shadow-xl">
+<!-- After Image (Background) -->
+<img alt="Clean decontaminated attic after service" class="ba-img-after" src="images/slider-attic-after.jpg"/>
+<!-- Before Image (Clipped Overlay) -->
+<div class="ba-before-wrapper">
+<img alt="Dirty rodent infested attic before cleaning" class="ba-img-before" src="images/slider-attic-before.jpg"/>
+</div>
+<!-- Slider Handle & Hidden Range Controller -->
+<div class="ba-slider-handle">
+<i class="bi bi-arrows-expand-vertical" style="transform: rotate(90deg);"></i>
+</div>
+<input aria-label="Before and after comparison slider" class="ba-range-input" max="100" min="0" type="range" value="50"/>
+<span class="ba-badge ba-badge-before">Before: Contaminated &amp; Dusty</span>
+<span class="ba-badge ba-badge-after">After: Clean &amp; Sanitized</span>
+</div>
+<div class="text-center mt-4">
+<p class="text-muted small"><i class="bi bi-info-circle me-1"></i> Interactive Demo: Drag or swipe the center divider left and right to inspect the transformation.</p>
+</div>
+</div>
+</section>
+<!-- SECTION 6: Customer Testimonials & Trust -->
+<section class="section-py bg-surface">
+<div class="container">
+<div class="text-center mb-5">
+<span class="section-tag">Homeowner Reviews</span>
+<h2 class="section-title">What Our Clients Say</h2>
+<p class="section-desc">Real stories from local homeowners who reclaimed their attic, crawl spaces, and indoor air health.</p>
+</div>
+<div class="row g-4">
+<div class="col-md-4">
+<div class="testimonial-card">
+<div class="star-rating">
+<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+</div>
+<p class="testimonial-text">"We had a horrible rodent issue in our attic that caused strong odors in our upstairs bedrooms. Mint &amp; Mop removed all contaminated insulation, sanitized every corner, and sealed every hole. The smell was gone that same day!"</p>
+<div class="testimonial-author">
+<img alt="Sarah Jenkins" class="author-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=120&amp;q=80"/>
+<div>
+<div class="author-name">Sarah Jenkins</div>
+<div class="author-location">Homeowner – Austin, TX</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="testimonial-card">
+<div class="star-rating">
+<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+</div>
+<p class="testimonial-text">"Our crawl space was filled with standing moisture and mold. The Mint &amp; Mop team encapsulated the whole area with a 20-mil vapor barrier and dehumidifier. Our electric bills dropped by 28% and our floors are finally warm!"</p>
+<div class="testimonial-author">
+<img alt="Marcus Vance" class="author-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=120&amp;q=80"/>
+<div>
+<div class="author-name">Marcus Vance</div>
+<div class="author-location">Homeowner – Seattle, WA</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="testimonial-card">
+<div class="star-rating">
+<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+</div>
+<p class="testimonial-text">"Super clean and courteous crew. They covered our hallways with protective plastic and left our house cleaner than they found it. Their photo documentation report was extremely detailed."</p>
+<div class="testimonial-author">
+<img alt="Elena Rodriguez" class="author-avatar" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&amp;fit=crop&amp;w=120&amp;q=80"/>
+<div>
+<div class="author-name">Elena Rodriguez</div>
+<div class="author-location">Real Estate Broker – Denver, CO</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: Final CTA & Complete Footer -->
+<section class="section-py cta-banner-section">
+<div class="container text-center">
+<div class="max-w-700 mx-auto">
+<span class="badge bg-white text-primary px-3 py-2 rounded-pill fw-bold mb-3">Limited Time Offer</span>
+<h2 class="display-5 fw-bold text-white mb-3">Ready For A Cleaner, Healthier Home?</h2>
+<p class="lead mb-4 cta-muted-text">Book your 100% free attic &amp; crawl space 25-point inspection today. Get an instant diagnostic photo report and upfront pricing.</p>
+<div class="d-flex justify-content-center flex-wrap gap-3 attic-cta-actions">
+<a class="btn-white-custom fs-5 px-5 py-3" data-bs-target="#freeInspectionModal" data-bs-toggle="modal" href="#inspectionModal">
+<i class="bi bi-calendar-event me-2 text-primary"></i> Schedule Free Inspection
+            </a>
+<a class="btn btn-outline-light rounded-pill px-4 py-3 fw-bold fs-5" href="tel:18005550168">
+<i class="bi bi-telephone-fill me-2"></i> (800) 555-0168
+            </a>
+<a class="attic-mail-cta" href="mailto:support@mintandmop.example?subject=Mint%20%26%20Mop%20Service%20Enquiry"><i aria-hidden="true" class="bi bi-envelope-paper-fill"></i> Mail Us</a></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Complete Site Footer -->
+<footer aria-label="Mint &amp; Mop site footer" class="site-footer attic-footer">
+<div class="container">
+<div class="attic-footer-grid">
+<div class="attic-footer-brand">
+<a aria-label="Mint &amp; Mop home" class="navbar-brand footer-brand" href="index.html"><span class="brand-icon mint-brand-icon"><img src="images/mint-mop-logo.svg" alt="" width="44" height="44" loading="eager" decoding="async"></span><span>Mint <span class="brand-badge">&amp; Mop</span></span></a>
+<p class="attic-footer-about">Expert attic cleaning, insulation removal, crawl space care and healthier-home solutions, with practical recommendations for each property.</p>
+<p class="attic-footer-small-heading">FOLLOW OUR WORK</p>
+<div aria-label="Social media links" class="social-links-wrapper">
+<a aria-label="Facebook" class="social-icon-btn btn-facebook" href="https://www.facebook.com/" rel="noopener noreferrer" target="_blank" title="Facebook"><i aria-hidden="true" class="bi bi-facebook"></i></a>
+<a aria-label="X (Twitter)" class="social-icon-btn btn-x" href="https://x.com/" rel="noopener noreferrer" target="_blank" title="X (Twitter)"><i aria-hidden="true" class="bi bi-twitter-x"></i></a>
+<a aria-label="Instagram" class="social-icon-btn btn-instagram" href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank" title="Instagram"><i aria-hidden="true" class="bi bi-instagram"></i></a>
+<a aria-label="LinkedIn" class="social-icon-btn btn-linkedin" href="https://www.linkedin.com/" rel="noopener noreferrer" target="_blank" title="LinkedIn"><i aria-hidden="true" class="bi bi-linkedin"></i></a>
+</div>
+</div>
+<nav aria-label="Footer navigation" class="attic-footer-nav"><h3>Navigation</h3><ul class="footer-links">
+<li><a href="index.html">Home 1 · General</a></li><li><a href="index-2.html">Home 2 · Attic &amp; Crawl</a></li>
+<li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li>
+<li><a href="pricing.html">Pricing</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact Us</a></li>
+</ul></nav>
+<nav aria-label="Footer service links" class="attic-footer-nav"><h3>Core Services</h3><ul class="footer-links">
+<li><a href="service-details.html?service=attic-cleaning">Attic Cleaning &amp; Decon</a></li>
+<li><a href="service-details.html?service=insulation-removal">Insulation Removal</a></li>
+<li><a href="service-details.html?service=crawl-space">Crawl Space Encapsulation</a></li>
+<li><a href="service-details.html?service=sanitization">Sanitization</a></li>
+<li><a href="service-details.html?service=mold-inspection">Thermal Moisture Scan</a></li>
+</ul></nav>
+<div class="attic-footer-contact"><h3>Contact &amp; Support</h3>
+<div class="attic-footer-contact-item"><i aria-hidden="true" class="bi bi-telephone-fill"></i><div><span>PHONE &amp; EMERGENCY</span><a href="tel:18005550168">(800) 555-0168</a></div></div>
+<div class="attic-footer-contact-item"><i aria-hidden="true" class="bi bi-envelope-fill"></i><div><span>EMAIL &amp; ESTIMATES</span><a href="mailto:support@mintandmop.example">support@mintandmop.example</a></div></div>
+<div class="attic-footer-contact-item"><i aria-hidden="true" class="bi bi-clock-fill"></i><div><span>DISPATCH HOURS</span><p>Mon–Sat · 7 AM – 8 PM</p></div></div>
+<a class="attic-footer-mail" href="mailto:support@mintandmop.example?subject=Mint%20%26%20Mop%20Service%20Enquiry"><i aria-hidden="true" class="bi bi-envelope-paper-fill"></i><span>Mail Us</span><i aria-hidden="true" class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+<div aria-label="Email updates" class="attic-footer-newsletter">
+<div class="attic-footer-newsletter-copy"><span class="attic-footer-small-heading">HOME CARE INSIGHTS</span><h3>Email Updates</h3><p>Get helpful attic, insulation and crawl space care tips. Demo signup only.</p></div>
+<div class="attic-footer-newsletter-action"><form class="attic-footer-newsletter-form" novalidate=""><label for="attic-footer-email">Email address</label><div class="attic-footer-newsletter-controls"><input autocomplete="email" id="attic-footer-email" inputmode="email" maxlength="254" name="email" placeholder="you@example.com" required="" type="email"/><button type="submit"><span>Subscribe</span><i aria-hidden="true" class="bi bi-arrow-right"></i></button></div></form><p aria-live="polite" class="attic-footer-feedback" role="status">Front-end demo — no emails are sent.</p></div>
+</div>
+<div class="footer-bottom attic-footer-bottom"><p>© 2026 Mint &amp; Mop. All rights reserved.</p><nav aria-label="Legal links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a><a href="contact.html">Contact</a></nav></div>
+</div>
+</footer>
+<!-- Back to Top Button -->
+<button aria-label="Back to top of page" class="back-to-top">
+<i class="bi bi-arrow-up"></i>
+</button>
+<!-- Modal: Free Inspection Request -->
+<div aria-hidden="true" aria-labelledby="freeInspectionModalLabel" class="modal fade" id="freeInspectionModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered modal-lg">
+<div class="modal-content border-0 shadow-xl" style="background-color: var(--bg-card); border-radius: var(--radius-lg);">
+<div class="modal-header border-bottom border-color p-4">
+<div>
+<h5 class="modal-title fw-bold" id="freeInspectionModalLabel"><i class="bi bi-clipboard2-check text-primary me-2"></i> Schedule 100% Free Inspection</h5>
+<small class="text-muted">Zero obligation • Same-day digital photo report • Upfront estimate</small>
+</div>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body p-4">
+<form class="inspection-form-ajax">
+<div class="form-success-alert alert alert-success d-none mb-4">
+<i class="bi bi-check-circle-fill me-2"></i> <strong>Inspection Confirmed!</strong> A certified technician will call you within 2 hours to confirm your time slot.
+            </div>
+<div class="row g-3">
+<div class="col-md-6">
+<label class="form-label">Full Name *</label>
+<input class="form-control" placeholder="John Doe" required="" type="text"/>
+</div>
+<div class="col-md-6">
+<label class="form-label">Phone Number *</label>
+<input class="form-control" placeholder="(555) 000-0000" required="" type="tel"/>
+</div>
+<div class="col-md-6">
+<label class="form-label">Email Address *</label>
+<input class="form-control" placeholder="john@example.com" required="" type="email"/>
+</div>
+<div class="col-md-6">
+<label class="form-label">Property Type</label>
+<select class="form-select">
+<option selected="">Single Family Home</option>
+<option>Townhouse / Duplex</option>
+<option>Commercial Property</option>
+<option>Multi-Family Unit</option>
+</select>
+</div>
+<div class="col-md-6">
+<label class="form-label">Primary Service Area</label>
+<select class="form-select">
+<option selected="">Attic Cleaning &amp; Decontamination</option>
+<option>Crawl Space Vapor Barrier</option>
+<option>Insulation Removal / Replacement</option>
+<option>Rodent Proofing &amp; Sealing</option>
+<option>Moisture &amp; Mold Inspection</option>
+</select>
+</div>
+<div class="col-md-6">
+<label class="form-label">Approximate Square Footage</label>
+<input class="form-control" placeholder="e.g. 1,800 sq ft" type="text"/>
+</div>
+<div class="col-12">
+<label class="form-label">Describe Any Symptoms (Smells, pests, cold floors, moisture)</label>
+<textarea class="form-control" placeholder="Tell us what you are noticing in your attic or crawl space..." rows="3"></textarea>
+</div>
+<div class="col-12 mt-4">
+<button class="btn-cta-primary w-100 py-3 fs-6 justify-content-center" type="submit">
+<i class="bi bi-send-fill me-2"></i> Confirm My Free Inspection Appointment
+                </button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<!-- Modal: Privacy Policy -->
+<div aria-hidden="true" aria-labelledby="privacyPolicyModalLabel" class="modal fade" id="privacyPolicyModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+<div class="modal-content border-0 shadow-xl" style="background-color: var(--bg-card); border-radius: var(--radius-lg);">
+<div class="modal-header border-bottom border-color p-4">
+<div class="d-flex align-items-center gap-2">
+<div class="brand-icon" style="width: 38px; height: 38px; font-size: 1.1rem;"><i class="bi bi-shield-lock-fill"></i></div>
+<div>
+<h5 class="modal-title fw-bold mb-0" id="privacyPolicyModalLabel">Mint &amp; Mop Privacy Policy</h5>
+<small class="text-muted">Effective Date: October 2026 • CCPA &amp; GDPR Compliant</small>
+</div>
+</div>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body p-4" style="color: var(--text-main); font-size: 0.95rem; line-height: 1.65;">
+<h6 class="fw-bold text-primary mb-2">1. Information We Collect</h6>
+<p class="text-muted small mb-3">When you request an inspection or remediation estimate, Mint &amp; Mop collects your name, property address, contact phone, email, and diagnostic findings including thermal infrared imaging scan photos, moisture meter percentage readouts, and attic/crawl space condition photos.</p>
+<h6 class="fw-bold text-primary mb-2">2. How Inspection Data &amp; Photos Are Used</h6>
+<p class="text-muted small mb-3">Diagnostic photos and sensor data are collected solely to generate your itemized 25-point inspection report, calculate upfront remediation pricing, and maintain our lifetime seal warranty database. We never sell, rent, or lease your personal information or property photos to any third-party marketing firms.</p>
+<h6 class="fw-bold text-primary mb-2">3. Digital Photo Storage &amp; Encryption</h6>
+<p class="text-muted small mb-3">All property assessment records, FLIR thermal photos, and before/after verification photos are stored in secure AES-256 encrypted cloud storage accessible only by your certified remediation crew and project supervisor.</p>
+<h6 class="fw-bold text-primary mb-2">4. Your Privacy Rights</h6>
+<p class="text-muted small mb-3">You retain the right to request access to your full inspection file, obtain copies of your digital diagnostic reports, or request complete removal of your property records from our cloud database by contacting our Data Protection Officer.</p>
+<div class="bg-surface p-3 rounded-3 border border-color mt-3">
+<div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+<span class="small text-muted"><i class="bi bi-envelope me-1 text-primary"></i> Data Protection Office: <strong>privacy@mintandmop.example</strong></span>
+<span class="small text-muted"><i class="bi bi-telephone me-1 text-primary"></i> Direct: <strong>(800) 555-0168</strong></span>
+</div>
+</div>
+</div>
+<div class="modal-footer border-top border-color p-3 d-flex justify-content-between align-items-center">
+<a class="btn btn-outline-primary py-2 px-3 small" href="privacy-policy.html"><i class="bi bi-box-arrow-up-right me-1"></i> Open Dedicated Full Page</a>
+<button class="btn btn-secondary-custom py-2 px-4" data-bs-dismiss="modal" type="button">Close</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal: Terms of Service -->
+<div aria-hidden="true" aria-labelledby="termsOfServiceModalLabel" class="modal fade" id="termsOfServiceModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+<div class="modal-content border-0 shadow-xl" style="background-color: var(--bg-card); border-radius: var(--radius-lg);">
+<div class="modal-header border-bottom border-color p-4">
+<div class="d-flex align-items-center gap-2">
+<div class="brand-icon" style="width: 38px; height: 38px; font-size: 1.1rem;"><i class="bi bi-file-earmark-text-fill"></i></div>
+<div>
+<h5 class="modal-title fw-bold mb-0" id="termsOfServiceModalLabel">Mint &amp; Mop Terms of Service</h5>
+<small class="text-muted">Standard Customer Service Agreement • Updated October 2026</small>
+</div>
+</div>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body p-4" style="color: var(--text-main); font-size: 0.95rem; line-height: 1.65;">
+<h6 class="fw-bold text-primary mb-2">1. Diagnostic Inspection &amp; Scope of Work</h6>
+<p class="text-muted small mb-3">Our 25-point attic and crawl space inspection is 100% complimentary with zero booking obligation. Upfront written quotes remain guaranteed for 30 calendar days from the date of initial diagnostic inspection.</p>
+<h6 class="fw-bold text-primary mb-2">2. Safety Containment &amp; Negative Pressure Protocol</h6>
+<p class="text-muted small mb-3">Remediation crews operate strictly under OSHA 29 CFR containment regulations. Living quarters are isolated with magnetic zipper airlocks, and negative air HEPA machines are vented to the exterior to guarantee zero indoor cross-contamination.</p>
+<h6 class="fw-bold text-primary mb-2">3. Lifetime Rodent Seal &amp; Workmanship Warranty</h6>
+<p class="text-muted small mb-3">All exclusion repairs executed with 1/4" galvanized steel mesh and fire-rated expanding foam carry a transferable Lifetime Rodent-Free Seal Warranty. Botanical antimicrobial treatments carry an unconditional 1-year odor and mold neutralization guarantee.</p>
+<h6 class="fw-bold text-primary mb-2">4. Payment &amp; Cancellation Policy</h6>
+<p class="text-muted small mb-3">Residential services do not require upfront deposits for jobs under $2,500. Payment is due upon completion and review of your digital photo clearance report. Rescheduling requests must be submitted at least 24 hours prior to service arrival.</p>
+</div>
+<div class="modal-footer border-top border-color p-3 d-flex justify-content-between align-items-center">
+<a class="btn btn-outline-primary py-2 px-3 small" href="terms-of-service.html"><i class="bi bi-box-arrow-up-right me-1"></i> Open Dedicated Full Page</a>
+<button class="btn btn-secondary-custom py-2 px-4" data-bs-dismiss="modal" type="button">Close</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal: EPA License & Certification Verification -->
+<div aria-hidden="true" aria-labelledby="epaLicenseModalLabel" class="modal fade" id="epaLicenseModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+<div class="modal-content border-0 shadow-xl" style="background-color: var(--bg-card); border-radius: var(--radius-lg);">
+<div class="modal-header border-bottom border-color p-4">
+<div class="d-flex align-items-center gap-2">
+<div class="brand-icon bg-success text-white" style="width: 38px; height: 38px; font-size: 1.1rem; background: linear-gradient(135deg, #10b981, #059669);"><i class="bi bi-patch-check-fill"></i></div>
+<div>
+<h5 class="modal-title fw-bold mb-0" id="epaLicenseModalLabel">EPA &amp; OSHA Compliance Verification</h5>
+<small class="text-muted">Federal EPA Lead-Safe &amp; Environmental Certification</small>
+</div>
+</div>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body p-4" style="color: var(--text-main); font-size: 0.95rem; line-height: 1.65;">
+<div class="alert alert-success d-flex align-items-center gap-3 mb-4 py-3">
+<i class="bi bi-shield-check fs-2 text-success"></i>
+<div>
+<div class="fw-bold">License #982410-NAT-RRP: Verified Active</div>
+<small>Certified Environmental Remediation Firm • In Good Standing for 2026</small>
+</div>
+</div>
+<div class="row g-3">
+<div class="col-sm-6">
+<div class="p-3 rounded-3 border bg-surface">
+<span class="text-muted small">Issuing Authority</span>
+<h6 class="fw-bold mb-0">U.S. Environmental Protection Agency</h6>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="p-3 rounded-3 border bg-surface">
+<span class="text-muted small">Federal Regulation</span>
+<h6 class="fw-bold mb-0">40 CFR Part 745 / RRP Rule</h6>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="p-3 rounded-3 border bg-surface">
+<span class="text-muted small">OSHA Standard</span>
+<h6 class="fw-bold mb-0">29 CFR 1910.134 / 1926.1101</h6>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="p-3 rounded-3 border bg-surface">
+<span class="text-muted small">Restoration Standards</span>
+<h6 class="fw-bold mb-0">IICRC S500 / S520 Certified</h6>
+</div>
+</div>
+</div>
+</div>
+<div class="modal-footer border-top border-color p-3 d-flex justify-content-between align-items-center">
+<span class="small text-muted"><i class="bi bi-shield-check text-success me-1"></i> EPA Firm ID: #982410-NAT-RRP</span>
+<button class="btn btn-secondary-custom py-2 px-4" data-bs-dismiss="modal" type="button">Close</button>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

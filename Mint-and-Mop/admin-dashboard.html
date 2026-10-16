@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Mint &amp; Mop Management Portal</title>
+  <meta name="description" content="Administrative control center for Mint &amp; Mop: manage service requests, inspection bookings, dispatch schedules, customer accounts, and revenue reports.">
+  
+  <link rel="icon" type="image/svg+xml" href="images/mint-mop-logo.svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="css/mint-mop-responsive.css">
+  <link href="css/dashboard.css" rel="stylesheet">
+</head>
+<body class="bg-surface">
+
+  <div class="admin-wrapper">
+    
+    <!-- 1. Dedicated Admin Sidebar -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="sidebar-header">
+        <a class="navbar-brand text-main" href="admin-dashboard.html">
+          <span class="brand-icon mint-brand-icon"><img src="images/mint-mop-logo.svg" alt="" width="44" height="44"></span>
+          <span>Mint <span class="brand-badge">&amp; Mop</span> <small class="text-muted fw-bold" style="font-size: 0.65rem; letter-spacing: 0.05em; vertical-align: middle;">ADMIN</small></span>
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-heading">Management Core</li>
+        <li>
+          <a href="#" class="sidebar-link sidebar-nav-tab active" data-tab="tab-overview">
+            <i class="bi bi-grid-1x2-fill"></i>
+            <span>Dashboard Overview</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="sidebar-link sidebar-nav-tab" data-tab="tab-bookings">
+            <i class="bi bi-clipboard2-check-fill"></i>
+            <span>Inspection Bookings</span>
+            <span class="sidebar-badge bg-primary text-white">8 New</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="sidebar-link sidebar-nav-tab" data-tab="tab-customers">
+            <i class="bi bi-people-fill"></i>
+            <span>Customers & Clients</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="sidebar-link sidebar-nav-tab" data-tab="tab-orders">
+            <i class="bi bi-truck-flatbed"></i>
+            <span>Active Remediation Jobs</span>
+            <span class="sidebar-badge bg-warning-subtle text-warning">4 Active</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="sidebar-link sidebar-nav-tab" data-tab="tab-messages">
+            <i class="bi bi-chat-left-text-fill"></i>
+            <span>Inquiries & Messages</span>
+            <span class="sidebar-badge bg-danger-subtle text-danger">3</span>
+          </a>
+        </li>
+
+        <li class="sidebar-heading mt-3">Analytics & System</li>
+        <li>
+          <a href="#" class="sidebar-link sidebar-nav-tab" data-tab="tab-reports">
+            <i class="bi bi-graph-up-arrow"></i>
+            <span>Revenue & Reports</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="sidebar-link sidebar-nav-tab" data-tab="tab-settings">
+            <i class="bi bi-gear-fill"></i>
+            <span>Settings & Dispatch Area</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div class="admin-user-profile mb-2">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&q=80" alt="Admin Avatar" class="admin-avatar">
+          <div class="overflow-hidden">
+            <div class="fw-bold small text-truncate">Robert Sterling</div>
+            <small class="text-muted d-block" style="font-size: 0.75rem;">Super Administrator</small>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center pt-2 border-top border-color">
+          <a href="index.html" class="text-muted small text-decoration-none">
+            <i class="bi bi-arrow-left me-1"></i> Public Website
+          </a>
+          <a href="login.html" class="text-danger small fw-semibold text-decoration-none">
+            <i class="bi bi-box-arrow-right me-1"></i> Logout
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Container -->
+    <div class="admin-main">
+      
+      <!-- 2. Admin Topbar -->
+      <header class="admin-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button type="button" class="btn btn-outline-secondary btn-sm d-lg-none" id="sidebarToggleBtn" aria-label="Toggle Navigation Sidebar">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+          <div>
+            <h5 class="fw-bold mb-0" id="currentSectionTitle">Admin Control Center</h5>
+            <small class="text-muted d-none d-sm-block">Interactive Demonstration Environment • Real-time UI Controls</small>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <!-- RTL Toggle -->
+          <button type="button" class="btn-control-toggle rtl-toggle-btn" id="rtlToggleBtn" title="Switch text direction">
+            <span class="toggle-label">RTL</span>
+          </button>
+          <!-- Theme Toggle -->
+          <button type="button" class="btn-control-toggle theme-toggle-btn" id="themeToggleBtn" title="Toggle theme mode">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          
+          <div class="vr mx-1"></div>
+
+          <!-- Notification Dropdown -->
+          <div class="dropdown">
+            <button class="btn btn-outline-secondary btn-sm rounded-circle p-2 position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="Notifications">
+              <i class="bi bi-bell-fill"></i>
+              <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-xl border-color p-2" style="min-width: 280px;">
+              <li><h6 class="dropdown-header fw-bold">Recent System Alerts</h6></li>
+              <li><a class="dropdown-item small py-2" href="#"><i class="bi bi-exclamation-circle text-warning me-2"></i> New inspection: Austin, TX (Rodent)</a></li>
+              <li><a class="dropdown-item small py-2" href="#"><i class="bi bi-check-circle text-success me-2"></i> Job #1042 marked Complete</a></li>
+              <li><a class="dropdown-item small py-2" href="#"><i class="bi bi-envelope text-primary me-2"></i> New inquiry from Sarah Jenkins</a></li>
+            </ul>
+          </div>
+
+          <a href="index.html" class="btn btn-sm btn-outline-primary rounded-pill px-3 ms-2 d-none d-md-inline-flex align-items-center gap-1">
+            <i class="bi bi-eye"></i> View Live Site
+          </a>
+        </div>
+      </header>
+
+      <!-- 3. Dashboard Content Area (Tabbed Sections) -->
+      <main class="admin-content">
+
+        <!-- ================= TAB 1: OVERVIEW ================= -->
+        <div class="dashboard-tab-content" id="tab-overview">
+          
+          <!-- Demonstration Disclaimer Alert -->
+          <div class="alert alert-info border-info d-flex align-items-center gap-3 mb-4 rounded-3">
+            <i class="bi bi-info-circle-fill fs-3 text-info flex-shrink-0"></i>
+            <div>
+              <strong class="d-block">Front-End Demonstration Environment</strong>
+              <small class="text-muted">The metrics, bookings, and customer data below are realistic sample records curated for ThemeForest & client presentations. Live integration connects to your custom REST API or CRM.</small>
+            </div>
+          </div>
+
+          <!-- KPI Cards Row -->
+          <div class="row g-3 mb-4">
+            <div class="col-sm-6 col-xl-3">
+              <div class="stat-card">
+                <div>
+                  <div class="stat-card-title">Monthly Revenue</div>
+                  <div class="stat-card-value">$71,200</div>
+                  <div class="stat-card-growth up">
+                    <i class="bi bi-arrow-up-right"></i> +14.8% vs last month
+                  </div>
+                </div>
+                <div class="stat-card-icon blue"><i class="bi bi-currency-dollar"></i></div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div class="stat-card">
+                <div>
+                  <div class="stat-card-title">Pending Inspections</div>
+                  <div class="stat-card-value">18</div>
+                  <div class="stat-card-growth up">
+                    <i class="bi bi-arrow-up-right"></i> +6 this week
+                  </div>
+                </div>
+                <div class="stat-card-icon teal"><i class="bi bi-clipboard-check"></i></div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div class="stat-card">
+                <div>
+                  <div class="stat-card-title">Active Dispatches</div>
+                  <div class="stat-card-value">7</div>
+                  <div class="stat-card-growth">
+                    <span class="badge bg-primary-light text-primary small">3 Trucks in Transit</span>
+                  </div>
+                </div>
+                <div class="stat-card-icon amber"><i class="bi bi-truck"></i></div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div class="stat-card">
+                <div>
+                  <div class="stat-card-title">Customer Satisfaction</div>
+                  <div class="stat-card-value">99.4%</div>
+                  <div class="stat-card-growth up">
+                    <i class="bi bi-star-fill text-warning"></i> 4.98 / 5.0 Rating
+                  </div>
+                </div>
+                <div class="stat-card-icon green"><i class="bi bi-heart-pulse-fill"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Revenue Chart & Quick Action Row -->
+          <div class="row g-4 mb-4">
+            <div class="col-lg-8">
+              <div class="dashboard-card mb-0 h-100">
+                <div class="dashboard-card-header">
+                  <h6 class="dashboard-card-title">2026 Monthly Remediation Revenue ($ USD)</h6>
+                  <span class="badge bg-success-subtle text-success fw-bold">YTD Total: $442,100</span>
+                </div>
+                <div class="p-4">
+                  <canvas id="revenueChartCanvas" height="240"></canvas>
+                  <div class="d-flex justify-content-between text-muted small mt-3 pt-2 border-top">
+                    <span><i class="bi bi-circle-fill text-primary me-1"></i> Highest Month: October ($71.2K)</span>
+                    <span>Average Job Size: $1,680</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="dashboard-card mb-0 h-100">
+                <div class="dashboard-card-header">
+                  <h6 class="dashboard-card-title">Service Type Breakdown</h6>
+                  <span class="small text-muted">Q3/Q4 2026</span>
+                </div>
+                <div class="p-4 d-flex flex-column justify-content-around h-100">
+                  <div>
+                    <div class="d-flex justify-content-between small fw-bold mb-1">
+                      <span>Attic Decontamination</span>
+                      <span>42%</span>
+                    </div>
+                    <div class="progress" style="height: 8px;">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 42%"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-between small fw-bold mb-1">
+                      <span>Crawl Space Vapor Barrier</span>
+                      <span>31%</span>
+                    </div>
+                    <div class="progress" style="height: 8px;">
+                      <div class="progress-bar bg-secondary" role="progressbar" style="width: 31%"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-between small fw-bold mb-1">
+                      <span>Insulation Extraction</span>
+                      <span>18%</span>
+                    </div>
+                    <div class="progress" style="height: 8px;">
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: 18%"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-between small fw-bold mb-1">
+                      <span>Thermal Mold Scans</span>
+                      <span>9%</span>
+                    </div>
+                    <div class="progress" style="height: 8px;">
+                      <div class="progress-bar bg-info" role="progressbar" style="width: 9%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Bookings Quick Table -->
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <h6 class="dashboard-card-title">Recent Inspection Bookings</h6>
+              <button class="btn btn-sm btn-primary rounded-pill px-3" onclick="document.querySelector('[data-tab=tab-bookings]').click();">
+                View All Bookings <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Client Name</th>
+                    <th>Service Requested</th>
+                    <th>Property Type</th>
+                    <th>Scheduled Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="fw-bold">David Chen</td>
+                    <td>Attic Cleaning & Sanitization</td>
+                    <td>Single Family (2,200 sq ft)</td>
+                    <td>Today, 2:00 PM</td>
+                    <td><span class="badge-status progress"><i class="bi bi-clock"></i> In Progress</span></td>
+                    <td><button class="btn-action-icon btn-view-booking" data-client="David Chen" data-service="Attic Cleaning" data-date="Today 2:00 PM" data-status="In Progress" title="View"><i class="bi bi-eye"></i></button></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Melissa Miller</td>
+                    <td>Crawl Space Encapsulation</td>
+                    <td>Townhouse (1,600 sq ft)</td>
+                    <td>Tomorrow, 9:00 AM</td>
+                    <td><span class="badge-status scheduled"><i class="bi bi-calendar-event"></i> Scheduled</span></td>
+                    <td><button class="btn-action-icon btn-view-booking" data-client="Melissa Miller" data-service="Crawl Space Encapsulation" data-date="Tomorrow 9:00 AM" data-status="Scheduled" title="View"><i class="bi bi-eye"></i></button></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Robert Jackson</td>
+                    <td>Insulation Vacuum Extraction</td>
+                    <td>Single Family (3,100 sq ft)</td>
+                    <td>Oct 19, 10:00 AM</td>
+                    <td><span class="badge-status pending"><i class="bi bi-hourglass-split"></i> Pending Confirm</span></td>
+                    <td><button class="btn-action-icon btn-view-booking" data-client="Robert Jackson" data-service="Insulation Removal" data-date="Oct 19" data-status="Pending Confirm" title="View"><i class="bi bi-eye"></i></button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ================= TAB 2: INSPECTION BOOKINGS ================= -->
+        <div class="dashboard-tab-content" id="tab-bookings" style="display: none;">
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <div>
+                <h5 class="dashboard-card-title mb-1">Inspection Requests & Service Bookings</h5>
+                <small class="text-muted">Manage diagnostic appointments and technician dispatch statuses.</small>
+              </div>
+
+              <!-- Filter & Search Controls -->
+              <div class="d-flex align-items-center gap-2">
+                <input type="text" id="bookingSearchInput" class="form-control form-control-sm" placeholder="Search client, service, city..." style="width: 220px;">
+                <select id="statusFilterSelect" class="form-select form-select-sm" style="width: 140px;">
+                  <option value="all">All Statuses</option>
+                  <option value="pending">Pending</option>
+                  <option value="scheduled">Scheduled</option>
+                  <option value="progress">In Progress</option>
+                  <option value="completed">Completed</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Booking ID</th>
+                    <th>Client</th>
+                    <th>Contact Phone</th>
+                    <th>Service</th>
+                    <th>City / Zip</th>
+                    <th>Scheduled Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="bookingsTableBody">
+                  <tr class="booking-table-row" data-status="progress">
+                    <td class="small text-muted">#BK-2041</td>
+                    <td class="fw-bold">David Chen</td>
+                    <td>(555) 234-8901</td>
+                    <td>Attic Sanitization</td>
+                    <td>Austin, 78701</td>
+                    <td>Oct 16, 2:00 PM</td>
+                    <td><span class="badge-status progress"><i class="bi bi-arrow-repeat"></i> In Progress</span></td>
+                    <td>
+                      <button class="btn-action-icon btn-view-booking" data-client="David Chen" data-service="Attic Sanitization" data-date="Oct 16" data-status="In Progress" title="View"><i class="bi bi-eye"></i></button>
+                      <button class="btn-action-icon" onclick="alert('Dispatched Truck #2 to David Chen');" title="Dispatch"><i class="bi bi-truck"></i></button>
+                    </td>
+                  </tr>
+
+                  <tr class="booking-table-row" data-status="scheduled">
+                    <td class="small text-muted">#BK-2042</td>
+                    <td class="fw-bold">Melissa Miller</td>
+                    <td>(555) 789-1234</td>
+                    <td>Crawl Encapsulation</td>
+                    <td>Round Rock, 78664</td>
+                    <td>Oct 17, 9:00 AM</td>
+                    <td><span class="badge-status scheduled"><i class="bi bi-calendar-check"></i> Scheduled</span></td>
+                    <td>
+                      <button class="btn-action-icon btn-view-booking" data-client="Melissa Miller" data-service="Crawl Encapsulation" data-date="Oct 17" data-status="Scheduled" title="View"><i class="bi bi-eye"></i></button>
+                      <button class="btn-action-icon" onclick="alert('Dispatched Truck #1 to Melissa Miller');" title="Dispatch"><i class="bi bi-truck"></i></button>
+                    </td>
+                  </tr>
+
+                  <tr class="booking-table-row" data-status="pending">
+                    <td class="small text-muted">#BK-2043</td>
+                    <td class="fw-bold">Robert Jackson</td>
+                    <td>(555) 345-6789</td>
+                    <td>Insulation Vacuum</td>
+                    <td>Cedar Park, 78613</td>
+                    <td>Oct 19, 10:00 AM</td>
+                    <td><span class="badge-status pending"><i class="bi bi-clock-history"></i> Pending</span></td>
+                    <td>
+                      <button class="btn-action-icon btn-view-booking" data-client="Robert Jackson" data-service="Insulation Vacuum" data-date="Oct 19" data-status="Pending" title="View"><i class="bi bi-eye"></i></button>
+                      <button class="btn-action-icon" onclick="alert('Booking #BK-2043 Approved!');" title="Approve"><i class="bi bi-check-lg"></i></button>
+                    </td>
+                  </tr>
+
+                  <tr class="booking-table-row" data-status="completed">
+                    <td class="small text-muted">#BK-2040</td>
+                    <td class="fw-bold">Sarah Jenkins</td>
+                    <td>(555) 890-1234</td>
+                    <td>Thermal Mold Scan</td>
+                    <td>Austin, 78704</td>
+                    <td>Oct 15, 11:30 AM</td>
+                    <td><span class="badge-status completed"><i class="bi bi-check-all"></i> Completed</span></td>
+                    <td>
+                      <button class="btn-action-icon btn-view-booking" data-client="Sarah Jenkins" data-service="Thermal Mold Scan" data-date="Oct 15" data-status="Completed" title="View"><i class="bi bi-eye"></i></button>
+                      <button class="btn-action-icon" onclick="alert('Downloading Clearance Certificate PDF');" title="Download Report"><i class="bi bi-file-earmark-pdf"></i></button>
+                    </td>
+                  </tr>
+
+                  <tr class="booking-table-row" data-status="completed">
+                    <td class="small text-muted">#BK-2039</td>
+                    <td class="fw-bold">Marcus Vance</td>
+                    <td>(555) 456-2345</td>
+                    <td>Rodent Proofing</td>
+                    <td>West Lake, 78746</td>
+                    <td>Oct 14, 1:00 PM</td>
+                    <td><span class="badge-status completed"><i class="bi bi-check-all"></i> Completed</span></td>
+                    <td>
+                      <button class="btn-action-icon btn-view-booking" data-client="Marcus Vance" data-service="Rodent Proofing" data-date="Oct 14" data-status="Completed" title="View"><i class="bi bi-eye"></i></button>
+                      <button class="btn-action-icon" onclick="alert('Downloading Clearance Certificate PDF');" title="Download Report"><i class="bi bi-file-earmark-pdf"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= TAB 3: CUSTOMERS ================= -->
+        <div class="dashboard-tab-content" id="tab-customers" style="display: none;">
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <h5 class="dashboard-card-title mb-0">Customer Accounts & Property Profiles</h5>
+              <button class="btn btn-sm btn-primary rounded-pill px-3" onclick="alert('Add customer modal simulation');">
+                <i class="bi bi-person-plus me-1"></i> Add New Customer
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Customer Name</th>
+                    <th>Email Address</th>
+                    <th>Phone</th>
+                    <th>Property Address</th>
+                    <th>Total Spend</th>
+                    <th>Warranty Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="fw-bold">David Chen</td>
+                    <td>david.chen@gmail.com</td>
+                    <td>(555) 234-8901</td>
+                    <td>1428 Oak Springs Dr, Austin</td>
+                    <td>$1,499</td>
+                    <td><span class="badge bg-success-subtle text-success">Active (2028)</span></td>
+                    <td><button class="btn-action-icon" onclick="alert('Customer Profile: David Chen');"><i class="bi bi-pencil"></i></button></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Melissa Miller</td>
+                    <td>m.miller@outlook.com</td>
+                    <td>(555) 789-1234</td>
+                    <td>892 Red Bud Lane, Round Rock</td>
+                    <td>$2,850</td>
+                    <td><span class="badge bg-success-subtle text-success">Active (2031)</span></td>
+                    <td><button class="btn-action-icon" onclick="alert('Customer Profile: Melissa Miller');"><i class="bi bi-pencil"></i></button></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Sarah Jenkins</td>
+                    <td>sarah.j@yahoo.com</td>
+                    <td>(555) 890-1234</td>
+                    <td>402 Congress Ave, Austin</td>
+                    <td>$749</td>
+                    <td><span class="badge bg-secondary-subtle text-secondary">Basic (2027)</span></td>
+                    <td><button class="btn-action-icon" onclick="alert('Customer Profile: Sarah Jenkins');"><i class="bi bi-pencil"></i></button></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Marcus Vance</td>
+                    <td>marcus.vance@techcorp.io</td>
+                    <td>(555) 456-2345</td>
+                    <td>1208 Highland Hills, Austin</td>
+                    <td>$3,420</td>
+                    <td><span class="badge bg-success-subtle text-success">Active (2031)</span></td>
+                    <td><button class="btn-action-icon" onclick="alert('Customer Profile: Marcus Vance');"><i class="bi bi-pencil"></i></button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= TAB 4: ORDERS & ACTIVE JOBS ================= -->
+        <div class="dashboard-tab-content" id="tab-orders" style="display: none;">
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <h5 class="dashboard-card-title mb-0">Active Remediation Work Orders</h5>
+              <span class="badge bg-primary text-white">4 Live Jobs In Field</span>
+            </div>
+            <div class="p-4">
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="bg-surface p-4 rounded-4 border">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                      <span class="fw-bold text-primary">#JOB-1043 • Attic Decontamination</span>
+                      <span class="badge bg-warning text-dark">Step 3 of 5</span>
+                    </div>
+                    <h6 class="fw-bold">Client: David Chen (Austin, TX)</h6>
+                    <p class="text-muted small mb-2">Lead Tech: Carlos M. • Truck #2 (High-Vacuum Extraction Unit)</p>
+                    <div class="progress mb-3" style="height: 10px;">
+                      <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" style="width: 60%"></div>
+                    </div>
+                    <small class="text-muted">Currently: HEPA detail scrub of roof joists.</small>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="bg-surface p-4 rounded-4 border">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                      <span class="fw-bold text-secondary">#JOB-1044 • Crawl Encapsulation</span>
+                      <span class="badge bg-info text-white">Step 4 of 5</span>
+                    </div>
+                    <h6 class="fw-bold">Client: Melissa Miller (Round Rock, TX)</h6>
+                    <p class="text-muted small mb-2">Lead Tech: Rachel K. • Truck #1 (Vapor Barrier Team)</p>
+                    <div class="progress mb-3" style="height: 10px;">
+                      <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" style="width: 80%"></div>
+                    </div>
+                    <small class="text-muted">Currently: Mastic perimeter wall sealing & taping.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= TAB 5: MESSAGES & INQUIRIES ================= -->
+        <div class="dashboard-tab-content" id="tab-messages" style="display: none;">
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <h5 class="dashboard-card-title mb-0">Incoming Website Inquiries</h5>
+              <span class="badge bg-danger-subtle text-danger">3 Unread Messages</span>
+            </div>
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>From</th>
+                    <th>Email</th>
+                    <th>Subject / Area</th>
+                    <th>Received</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="fw-bold">Karen Davis</td>
+                    <td>kdavis@gmail.com</td>
+                    <td>Musty Odor in nursery following heavy rainstorm</td>
+                    <td>20 Mins Ago</td>
+                    <td><button class="btn btn-sm btn-outline-primary" onclick="alert('Inquiry Preview:\nFrom: Karen Davis\nMessage: We noticed a strong musty smell in our baby\'s nursery after yesterday\'s rain. Need someone to check our crawl space.');">Reply</button></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">George Wilson</td>
+                    <td>gwilson72@yahoo.com</td>
+                    <td>Commercial warehouse attic insulation quote</td>
+                    <td>2 Hours Ago</td>
+                    <td><button class="btn btn-sm btn-outline-primary" onclick="alert('Inquiry Preview:\nFrom: George Wilson\nMessage: Looking for quote on 8,000 sq ft commercial storage attic.');">Reply</button></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Jennifer Taylor</td>
+                    <td>jtaylor@homemail.com</td>
+                    <td>Heard animal scratching above ceiling at night</td>
+                    <td>Yesterday</td>
+                    <td><button class="btn btn-sm btn-outline-primary" onclick="alert('Inquiry Preview:\nFrom: Jennifer Taylor\nMessage: Scratching sounds every night above master bedroom.');">Reply</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= TAB 6: REPORTS & CHARTS ================= -->
+        <div class="dashboard-tab-content" id="tab-reports" style="display: none;">
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <h5 class="dashboard-card-title mb-0">Quarterly Operational Reports</h5>
+              <button class="btn btn-sm btn-outline-secondary" onclick="alert('Exporting CSV...');"><i class="bi bi-download me-1"></i> Export CSV</button>
+            </div>
+            <div class="p-4">
+              <div class="row g-4 text-center">
+                <div class="col-md-3">
+                  <div class="bg-surface p-4 rounded-4 border">
+                    <div class="counter-num text-primary">312</div>
+                    <div class="text-muted small">Inspections Completed</div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="bg-surface p-4 rounded-4 border">
+                    <div class="counter-num text-success">86.4%</div>
+                    <div class="text-muted small">Inspection-to-Job Close Rate</div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="bg-surface p-4 rounded-4 border">
+                    <div class="counter-num text-secondary">0</div>
+                    <div class="text-muted small">Cross-Contamination Incidents</div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="bg-surface p-4 rounded-4 border">
+                    <div class="counter-num text-warning">100%</div>
+                    <div class="text-muted small">Air Quality Clearance Rate</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= TAB 7: SETTINGS ================= -->
+        <div class="dashboard-tab-content" id="tab-settings" style="display: none;">
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <h5 class="dashboard-card-title mb-0">Company Profile & Dispatch Settings</h5>
+            </div>
+            <div class="p-4">
+              <form onsubmit="event.preventDefault(); alert('Settings saved successfully!');">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Business Name</label>
+                    <input type="text" class="form-control" value="Mint &amp; Mop">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Central Emergency Hotline</label>
+                    <input type="text" class="form-control" value="(800) 555-0168">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Default Service Radius (Miles)</label>
+                    <input type="number" class="form-control" value="50">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">EPA Firm Certification Number</label>
+                    <input type="text" class="form-control" value="R-I-19409-TX">
+                  </div>
+                  <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-primary px-4">Save Configuration</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
